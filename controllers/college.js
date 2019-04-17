@@ -55,7 +55,7 @@ exports.updateCollege = (req, res) => {
 exports.searchCollege = (req, res) => {
   var searchString = req.params.query;
   College.find({$text: {$search: searchString}}).then( (cllg) => {
-    res.status(200).send("sucess")      
+    res.status(200).send(cllg)      
   }).catch ( (err) =>  {
     res.status(500).send("Search failed")
   })
@@ -67,9 +67,9 @@ exports.getCollege = (req, res) => {
   College.findById(_id).then( (college) => {
     if(!college)
     {
-      return res.status(204).send("no content")
+      return res.status(204).send(college)
     }
-    res.status(200).send("success");
+    res.status(200).send(college);
   })
   .catch( (error) => {
     res.status(500).send("Something went wrong")

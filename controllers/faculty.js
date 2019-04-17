@@ -8,7 +8,7 @@ exports.getFaculty = (req, res) => {
   Faculty.findById( {_id} ).then((fac)=> {
     if(!fac)
     {
-      res.status(204).send()
+      res.status(204).send(fac);
     }
     console.log(fac._id)
     res.status(200).send(fac);
@@ -21,7 +21,7 @@ exports.searchFaculty = (req, res) => {
   console.log(req.params.query);
   const searchString = req.params.query;
   Faculty.find({$text: {$search: searchString}}).then( (fac) => {
-    res.status(200).send("success")
+    res.status(200).send(fac)
   }).catch ( (err) =>  {
     res.status(500).send("Search failed")
   })
