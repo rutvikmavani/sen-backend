@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const facultySchema = new mongoose.Schema(
   {
@@ -47,8 +47,8 @@ const facultySchema = new mongoose.Schema(
       socialMedia: [{ name: String, link: String }]
     }
   },
-  { collection: "faculty" }
-);
-facultySchema.index({ "$**": "text" });
+  { collection: 'faculty' }
+)
+facultySchema.index({ '$**': 'text' })
 
-module.exports = mongoose.model("Faculty", facultySchema);
+module.exports = mongoose.model('Faculty', facultySchema)

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const collegeSchema = new mongoose.Schema(
   {
@@ -31,8 +31,8 @@ const collegeSchema = new mongoose.Schema(
     }
   },
   {
-    collection: "colleges"
+    collection: 'colleges'
   }
-);
-collegeSchema.index({ "$**": "text" });
-module.exports = mongoose.model("College", collegeSchema);
+)
+collegeSchema.index({ '$**': 'text' })
+module.exports = mongoose.model('College', collegeSchema)

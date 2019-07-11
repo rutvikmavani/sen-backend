@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const adminSchema = new mongoose.Schema(
   {
@@ -17,14 +17,14 @@ const adminSchema = new mongoose.Schema(
     type: {
       type: String,
       required: true,
-      enum: ["system", "college"]
+      enum: ['system', 'college']
     },
     college: {
       name: String,
       id: String
     }
   },
-  { collection: "administrators" }
-);
+  { collection: 'administrators' }
+)
 
-module.exports = mongoose.model("Admin", adminSchema);
+module.exports = mongoose.model('Admin', adminSchema)
